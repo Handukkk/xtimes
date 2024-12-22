@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTimes</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <div class="all-wrapper">
+        <div class="image-container">
+            <img src="{{ normal_img_path }}"  alt="Normal image" class="normal">
+            <img src="{{ upscaled_img_path }}" alt="Upscaled image" class="upscaled" id="will-cropped">
+            <div class="bar" id="bar-line"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="image-slide" oninput="slide()">
+        </div>
+        <script src="./static/script.js"></script>
+        <a href="{{ url_for('download_file', filename=upscaled_name) }}" class="download">Download</a>
+    </div>
+</body>
+</html>
